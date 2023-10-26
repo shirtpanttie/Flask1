@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
-      h1{
-        font-size:40px;
-        font-family:Roborto;
-        font-weight:normal;
-        color:rgb(50,50,50);
-        text-align:center;
-      }
-      #home-image{
-        width:100%; 
-        height:360px;
-        object-fit:cover;
-      }
-      h2{
-        font-family:Roborto;
-        font-size:32px;
-        color:rgb(100,100,100);
-        text-align:center;
-        font-weight:normal;
-      }
-      .bodytext{
-        font-family:Roborto;
-      }
-      #container{
-        max-width:720px;
-        margin:0 auto 0 auto;
+      #banner {
+        height: 360px;
+        width:100%;
       }
     </style>
+    <title>Home</title>
   </head>
   <body>
-    <div id="container">
-      <h1>Jovian Careers</h1>
-      <img id="home-image" src="https://flask1--svenkatmohit288.repl.co/static/banner.jpeg"     alt="Random">
-      <h2>About Jovian</h2>
-      <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam aliquid aperiam incidunt doloribus. Placeat voluptates ipsam, iste adipisci nihil aliquid quasi, doloremque neque quaerat, ex aliquam! Voluptate nesciunt quaerat labore!</p>
-      <h2>Open Positions</h2>
-      <p class="bodytext">TODO - show jobs here</p>
-      <div style="text-align:center">
-        <button>Contact us</button>
-        <p>CopyRight Jovian 2023</p>
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">Jovian Careers</h1>
+      <img class="img-fluid" id="banner"
+        src="https://flask1--svenkatmohit288.repl.co/static/banner.jpeg"     alt="Random">
+      <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam aliquid aperiam   
+      incidunt doloribus. Placeat voluptates ipsam, iste adipisci nihil aliquid quasi, doloremque neque 
+      quaerat, ex aliquam! Voluptate nesciunt quaerat labore!</p>
+      <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+        {% for job in job %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact us</button>
+        <p class="mt-4">CopyRight Jovian 2023</p>
       </div>
     </div>
   </body>
